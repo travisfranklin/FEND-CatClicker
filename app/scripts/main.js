@@ -5,10 +5,9 @@
 function Kitty(name) {
   this.name = name,
   this.clickCount = 0,
-  this.click = function() {
-    String(this).click(function() {
-      this.clickCount++
-    });
+  this.clicker = function clicker() {
+    this.clickCount++
+    $(`.${this.name}clicked`).text(clickCount);
   };
 };
 
@@ -16,13 +15,13 @@ function Kitty(name) {
 const cats = [
   'kiki',
   'buckaroo',
-  // 'lelouche',
-  // 'laHire',
-  // 'cheeky',
-  // 'whiskers',
-  // 'bulgaria',
-  // 'mr. Rogers',
-  // 'dog'
+  'lelouche',
+  'laHire',
+  'cheeky',
+  'whiskers',
+  'bulgaria',
+  'mr_Rogers',
+  'dog'
 ];
 
 // Define an array in which we can place our cats
@@ -49,9 +48,9 @@ for (let cat of playPen) {
     <li>
         <div class="cat-unit">
           <div class="cat cat_type18">
-            <div class="cat__previewbox">
+            <div id="${cat.name}" class="cat__previewbox">
               <p class="title">${cat.name}</p>
-              <img id="${cat.name}" src="${cat.photo}" class="cat__preview" alt="photo of ${cat.name} the cat">
+              <img src="${cat.photo}" class="cat__preview" alt="photo of ${cat.name} the cat">
               <p class="count"><span class="${cat.name}clicked">0</span> clicks</p>
             </div>
           </div>
@@ -66,7 +65,10 @@ for (let cat of playPen) {
 // CONTROLLER
 ///////////////////
 
-$('.cat').click(function() {
-  clickCounter++;
-  $('.clicked').text(clickCounter);
+playPen.forEach(function(cat) {
+  $(`#${cat.name}`).click(function() {
+    cat.clickCount++;
+    $(`.${cat.name}clicked`).text(cat.clickCount);
+  });
 });
+
