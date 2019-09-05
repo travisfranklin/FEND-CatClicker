@@ -18,11 +18,25 @@
     <!--[if IE]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    <div class="admin">
+      <button class="catList__Link">Admin</button>
+      <div class="admin__form">
+        <form action="/action_page.php">
+            <div class="container">
+              <label for="name"><strong>Username</strong></label>
+              <input type="text" placeholder="name" name="name" required>
+              <label for="imgUrl"><strong>ImgUrl</strong></label>
+              <input type="text" placeholder="Image URL" name="imgUrl" required>
+              <label for="clicks"><strong># Clicks</strong></label>
+              <input type="number" placeholder="# Clicks" name="clicks" required>
+            </div>
+            <button type="submit"><strong>SAVE</strong></button>
+            <button type="cancel"><strong>CANCEL</strong></button>
+        </form>
+      </div>
+    </div>
     <h1>Click a cat</h1>
     <ul class="catList__Links">
-      <!-- <li id="kiki" class="catList__Link">kiki</li>
-      <li class="catList__Link">buckaroo</li>
-      <li class="catList__Link">lelouche</li> -->
     </ul>
     <ul class="catList__Container">
     <!-- Cats Added Here from Main.js -->
