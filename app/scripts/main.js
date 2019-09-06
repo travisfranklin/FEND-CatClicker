@@ -33,7 +33,7 @@ const view = {
     function renderCatList() {
       for (let cat of playPen) {
         $(`
-          <li id="${cat.name}__Link" class="catList__Link">${cat.name}</li>
+          <li><button id="${cat.name}__Link">${cat.name}</button></li>
         `).appendTo('.catList__Links');
       };
     };
@@ -98,8 +98,27 @@ const controller = {
 
               // make the clicked cat visible
               $(`#${cat.name}`).toggleClass('hidden');
+
+              // update admin form with appropriate data
+              $('input[name="name"]').val(`${cat.name}`);
+              $('input[name="imgUrl"]').val(`${cat.photo}`);
+              $('input[name="clicks"]').val(`${cat.clickCount.toString()}`);
             });
           });
+
+          // Add click event listener to admin button
+          $('.admin__toggle').click(function() {
+            $('.admin__wrapper').toggleClass('opened');
+            $('.admin__wrapper').toggleClass('closed');
+            $('.admin__toggle').toggleClass('danger');
+            if ($('.admin__toggle').hasClass('danger')) {
+              $('.admin__toggle').text('close');
+            } else {
+              $('.admin__toggle').text('admin');
+            };
+          });
+
+
   },
 }
 controller.init();

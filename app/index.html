@@ -18,29 +18,32 @@
     <!--[if IE]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    <main>
+      <h1>Click a cat</h1>
+      <ul class="catList__Links">
+      </ul>
+      <ul class="catList__Container">
+      <!-- Cats Added Here from Main.js -->
+      </ul>
+    </main>
     <div class="admin">
-      <button class="catList__Link">Admin</button>
-      <div class="admin__form">
-        <form action="/action_page.php">
-            <div class="container">
-              <label for="name"><strong>Username</strong></label>
-              <input type="text" placeholder="name" name="name" required>
-              <label for="imgUrl"><strong>ImgUrl</strong></label>
-              <input type="text" placeholder="Image URL" name="imgUrl" required>
-              <label for="clicks"><strong># Clicks</strong></label>
-              <input type="number" placeholder="# Clicks" name="clicks" required>
-            </div>
-            <button type="submit"><strong>SAVE</strong></button>
-            <button type="cancel"><strong>CANCEL</strong></button>
-        </form>
+      <button class="admin__toggle">Admin</button>
+      <div class="admin__wrapper closed">
+        <div class="admin__form">
+          <form action="/action_page.php">
+              <div class="container">
+                <label for="name">Name</label><br>
+                <input type="text" placeholder="name" name="name" required><br>
+                <label for="imgUrl">Img Url</label><br>
+                <input type="text" placeholder="Image URL" name="imgUrl" required><br>
+                <label for="clicks"># Clicks</label><br>
+                <input type="number" placeholder="# Clicks" name="clicks" required>
+              </div>
+              <button type="submit">save</button>
+          </form>
+        </div>
       </div>
     </div>
-    <h1>Click a cat</h1>
-    <ul class="catList__Links">
-    </ul>
-    <ul class="catList__Container">
-    <!-- Cats Added Here from Main.js -->
-    </ul>
     <!-- build:js scripts/vendor.js -->
     <script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
     <!-- endbuild -->

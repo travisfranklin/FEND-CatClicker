@@ -172,11 +172,18 @@ body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #333;
   text-align: center;
-  max-width: 700px;
   width: 100%;
   height: 100%;
   background-color: #efefef;
-  margin: 20px auto 0 auto;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+main {
+  text-align: center;
+  width: 100%;
+  max-width: 700px;
+  margin: auto;
 }
 
 ul {
@@ -200,12 +207,14 @@ h1 {
   max-width: 700px;
   width: 100%;
 }
+
 .catList__Link,
 button {
-  margin: 5px;
-  padding:2px 15px;
+  margin: 5px 0 0 5px;
+  padding:6px 15px;
   background-color: #fff;
   border-bottom: 3px solid #efefef;
+  border-radius: 2px;
   transition: .1s;
   cursor: pointer;
 }
@@ -214,9 +223,12 @@ button {
 button:hover {
   color: #6441a4;
   border-bottom: 3px solid #6441a4;
-  padding:2px 15px;
+  padding:6px 15px;
+}
 
-
+button.danger:hover {
+  color: #CD0046;
+  border-bottom: 3px solid #CD0046;
 }
 
 .cat {
@@ -269,12 +281,12 @@ p {
   position: absolute;
   bottom: 0px;
   right: 4px;
-  z-index: 9999;
+  z-index: 9;
 }
 .title {
   position: absolute;
   left: 7px;
-  z-index: 9999;
+  z-index: 9;
 }
 
 .hidden {
@@ -284,4 +296,65 @@ p {
 
 img {
   border-radius: 6px;
+}
+
+// Admin
+
+.admin {
+  width: 100%;
+  background: transparent;
+  text-align:center;
+  bottom: -8px;
+  height:auto;
+  overflow:hidden;
+  position:absolute;
+  // display:inline-block;
+  z-index: 9999999;
+}
+
+.admin__wrapper.closed {
+  transform: translate(0, 200%);
+}
+
+.admin__wrapper.opened {
+  transform: translate(0, 0);
+}
+
+.admin__wrapper {
+  padding: 70px 0px;
+  overflow-y: scroll;
+  height:130%;
+  transition: transform .3s ease;
+  margin: 0 auto;
+  background-color: #6441a4;
+  color: #fff;
+  text-align: center;
+}
+
+.admin__toggle {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index:99;
+}
+
+.admin__form {
+  display:inline-block;
+  text-align:right;
+}
+
+.admin__form input {
+  width: 270px;
+  margin: 5px 0;
+  padding: 10px;
+  border: none;
+  border-radius: 2px;
+}
+
+.admin__form label {
+  color: #ffffff55;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-top: 5px;
+  float: left;
 }
