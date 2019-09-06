@@ -81,7 +81,12 @@ const controller = {
 
               // increment count when clicked
               cat.clickCount++;
+
+              // update click count on image
               $(`.${cat.name}clicked`).text(cat.clickCount);
+
+              // update click count in admin
+              $('input[name="clicks"]').val(`${cat.clickCount}`);
             });
           });
 
@@ -102,7 +107,7 @@ const controller = {
               // update admin form with appropriate data
               $('input[name="name"]').val(`${cat.name}`);
               $('input[name="imgUrl"]').val(`${cat.photo}`);
-              $('input[name="clicks"]').val(`${cat.clickCount.toString()}`);
+              $('input[name="clicks"]').val(`${cat.clickCount}`);
             });
           });
 
@@ -111,14 +116,13 @@ const controller = {
             $('.admin__wrapper').toggleClass('opened');
             $('.admin__wrapper').toggleClass('closed');
             $('.admin__toggle').toggleClass('danger');
+            $('.admin').toggleClass('in-front');
             if ($('.admin__toggle').hasClass('danger')) {
               $('.admin__toggle').text('close');
             } else {
               $('.admin__toggle').text('admin');
             };
           });
-
-
   },
 }
 controller.init();
