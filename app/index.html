@@ -29,17 +29,18 @@
     <div class="admin">
       <button class="admin__toggle">Admin</button>
       <div class="admin__wrapper closed">
+        <button class="green" id="submit" type="submit">save</button>
         <div class="admin__form">
-          <form action="/action_page.php">
+          <form>
               <div class="container">
-                <label for="name">Name</label><br>
-                <input type="text" placeholder="name" name="name" required><br>
-                <label for="imgUrl">Img Url</label><br>
-                <input type="text" placeholder="Image URL" name="imgUrl" required><br>
-                <label for="clicks"># Clicks</label><br>
-                <input type="number" placeholder="# Clicks" name="clicks" required>
+                <label for="name">Name</label>
+                <input id="inputName" type="text" placeholder="name" name="name" required><br>
+                <label for="imgUrl">Img Url</label>
+                <input id="inputURL" type="text" placeholder="Image URL" name="imgUrl" required><br>
+                <label for="clicks"># Clicks</label>
+                <input id="inputClickCount" type="number" placeholder="# Clicks" name="clicks" required>
+                <input id="inputID" type="hidden" name="id">
               </div>
-              <button type="submit">save</button>
           </form>
         </div>
       </div>
